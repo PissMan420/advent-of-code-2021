@@ -1,0 +1,8 @@
+{
+  "files.associations": {
+    "curses.h": "c",
+    "curl.h": "c",
+    "http.h": "c",
+    "stdio.h": "c"
+  }
+}
