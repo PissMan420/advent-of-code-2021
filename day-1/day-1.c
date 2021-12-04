@@ -18,7 +18,7 @@ int main(int argc, char *argv[])
   size_t ln = 0;
   int time_increased = 0, time_decreased = 0, previous_numb, amount_invalid_char = 0; 
 
-  char currentline[6];
+  char currentline[8];
   while (fgets(currentline, sizeof(currentline), challenge_input_file) != NULL) {
     int currentnumber;
     char** invalid_chars = malloc(sizeof(char*) * 100);
@@ -29,14 +29,8 @@ int main(int argc, char *argv[])
       free(invalid_chars);
       continue;
     }
-    if (currentnumber == 0) {
-      free(invalid_chars);
-      continue;
-    }
     if (currentnumber >= previous_numb)
       time_increased++;
-    else
-      time_increased--;
     previous_numb = currentnumber;
     free(invalid_chars);
   }
@@ -45,7 +39,6 @@ int main(int argc, char *argv[])
 
   printf("Results:\n");
   printf("Increase count: %d\n", time_increased - amount_invalid_char);
-  printf("Decrease count: %d\n", time_decreased);
 
   return 0; 
 }
