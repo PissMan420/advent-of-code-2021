@@ -23,12 +23,6 @@ int main(int argc, char *argv[])
     int currentnumber;
     char** invalid_chars = malloc(sizeof(char*) * 100);
     currentnumber = strtol(currentline, invalid_chars, 10);
-    if (invalid_chars) {
-      int hasfoundinvalidchar = 0;
-      for (int str_idx = 0; str_idx < sizeof(invalid_chars); str_idx++) {
-        hasfoundinvalidchar = 1;
-      }
-    }
 
     if (!previous_numb) {
       previous_numb = currentnumber;
